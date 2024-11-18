@@ -34,9 +34,7 @@ function createLi(value) {
   checkbox.type = "checkbox";
   p.innerText = value;
 
-  img.src = "../assets/trash.svg";
   firstDiv.append(span, checkbox, p);
-  button.append(img);
   lastDiv.append(button);
 
   li.append(firstDiv, lastDiv);
@@ -64,5 +62,5 @@ function createLi(value) {
 
 function removeItem(value) {
   listItem = listItem.filter((element) => element.id != value.id);
-  value.removeItem();
+  value.remove();
 }

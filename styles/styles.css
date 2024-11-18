@@ -111,12 +111,10 @@ li {
   }
   button {
     border: none;
-    background: none;
     line-height: 0;
     padding: 0.5rem;
-    img {
-      width: 1rem;
-    }
+    background: url(../assets/trash.svg) no-repeat center/contain;
+    margin: 0.5rem;
   }
 }
 
