@@ -1,0 +1,159 @@
+header {
+  display: none;
+}
+
+@media (width >= 80rem) {
+  header {
+    display: block;
+    text-align: center;
+    margin-block: 1.5rem 5.875rem;
+  }
+}
+
+h1 {
+  margin-block: 4.125rem 2.75rem;
+}
+
+@media (width >= 80rem) {
+  h1 {
+    margin-block: 0 2.75rem;
+  }
+}
+
+form {
+  display: grid;
+
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+
+  input {
+    padding: 0.75rem 1.125rem;
+    border-radius: 0.75rem;
+    border: 2px solid var(--border-primary);
+    font: 400 1rem/1.4 var(--font-family);
+    color: var(--content-tertiary);
+
+    &:hover {
+      border-color: var(--border-hover);
+    }
+
+    &:focus {
+      outline-color: var(--color-brand);
+      color: var(--content-primary);
+    }
+  }
+
+  button {
+    border: none;
+    background-color: var(--color-brand);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    color: var(--background-secondary);
+    font: var(--label);
+
+    &:hover {
+      background-color: var(--color-brand-hover);
+    }
+  }
+}
+@media (width >= 80rem) {
+  form {
+    grid-template-columns: 1fr 10rem;
+  }
+}
+
+ul {
+  display: grid;
+  gap: 0.75rem;
+  max-height: 16.25rem;
+  overflow-y: auto;
+}
+
+@media (width >= 80rem) {
+  ul {
+    max-height: 20rem;
+  }
+}
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-secondary);
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+
+  div {
+    display: flex;
+    gap: 1rem;
+    span {
+      background: url(../assets/state=Default.svg) no-repeat center/contain;
+      width: 1rem;
+    }
+
+    input {
+      position: absolute;
+      inset: 0;
+      width: 92%;
+      opacity: 0;
+    }
+    &:hover {
+      span {
+        background-image: url(../assets/state=hover.svg);
+      }
+    }
+    &:has(:checked) {
+      span {
+        background-image: url(../assets/state=selected.svg);
+      }
+    }
+  }
+  button {
+    border: none;
+    background: none;
+    line-height: 0;
+    padding: 0.5rem;
+    img {
+      width: 1rem;
+    }
+  }
+}
+
+#tag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-danger);
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--background-secondary);
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(100%);
+
+  div {
+    display: flex;
+    gap: 1rem;
+  }
+
+  button {
+    border: none;
+    background: none;
+    line-height: 0;
+    padding: 0.5rem;
+  }
+}
+
+@keyframes slideUp {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
